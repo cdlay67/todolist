@@ -11,14 +11,16 @@ using System.Data.SqlClient;
 
 namespace ToDo
 {
-    public partial class Learning : UserControl
+    public partial class Misc : UserControl
     {
-        public Learning()
+        public Misc()
         {
             InitializeComponent();
             getToDolist();
             findToDolist();
+
         }
+
 
         int poss = 1;
         public void addItems(string text)
@@ -28,10 +30,8 @@ namespace ToDo
             item.Top = poss;
             poss = flowLayoutPanel1.Controls.Count * item.Height + 1;
 
-            //ToDoItem[] todoItems = new ToDoItem[999];
-            //listBox1.Items.Add(textbox.Text);
-
         }
+
         int pos = 1;
         public void saveItems(string text)
         {
@@ -62,7 +62,7 @@ namespace ToDo
             using (SQL)
             {
                 SQL.Open();
-                SqlCommand command = new SqlCommand("SELECT * FROM Learning", SQL);
+                SqlCommand command = new SqlCommand("SELECT * FROM Misc", SQL);
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -79,7 +79,7 @@ namespace ToDo
             using (SQL)
             {
                 SQL.Open();
-                SqlCommand commandSec = new SqlCommand("INSERT INTO Learning (listtext) VALUES ('" + insert + "')", SQL);
+                SqlCommand commandSec = new SqlCommand("INSERT INTO Misc (listtext) VALUES ('" + insert + "')", SQL);
                 commandSec.ExecuteNonQuery();
             }
         }
@@ -107,7 +107,7 @@ namespace ToDo
             using (SQL)
             {
                 SQL.Open();
-                SqlCommand commandSec = new SqlCommand("INSERT INTO Complete (Learntext) VALUES ('" + insert + "')", SQL);
+                SqlCommand commandSec = new SqlCommand("INSERT INTO Complete (Misctext) VALUES ('" + insert + "')", SQL);
                 commandSec.ExecuteNonQuery();
             }
         }

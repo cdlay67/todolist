@@ -34,6 +34,8 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // gunaAdvenceButton1
@@ -66,6 +68,7 @@
             this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
             this.gunaAdvenceButton1.Size = new System.Drawing.Size(62, 58);
             this.gunaAdvenceButton1.TabIndex = 12;
+            this.gunaAdvenceButton1.Click += new System.EventHandler(this.gunaAdvenceButton1_Click_1);
             // 
             // textbox
             // 
@@ -76,17 +79,17 @@
             this.textbox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.textbox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.textbox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textbox.Location = new System.Drawing.Point(20, 371);
+            this.textbox.Location = new System.Drawing.Point(7, 371);
             this.textbox.Name = "textbox";
             this.textbox.PasswordChar = '\0';
             this.textbox.SelectedText = "";
-            this.textbox.Size = new System.Drawing.Size(586, 44);
+            this.textbox.Size = new System.Drawing.Size(599, 44);
             this.textbox.TabIndex = 13;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 35);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(7, 35);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(655, 316);
             this.flowLayoutPanel1.TabIndex = 11;
@@ -94,7 +97,7 @@
             // gunaPanel1
             // 
             this.gunaPanel1.BackColor = System.Drawing.Color.DimGray;
-            this.gunaPanel1.Location = new System.Drawing.Point(3, 35);
+            this.gunaPanel1.Location = new System.Drawing.Point(666, 35);
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(11, 316);
             this.gunaPanel1.TabIndex = 10;
@@ -109,17 +112,37 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "ToDoList | Rewards";
             // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoScroll = true;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(681, 35);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(473, 380);
+            this.flowLayoutPanel2.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(677, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 20);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "COMPLETED";
+            // 
             // Rewards
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.gunaAdvenceButton1);
             this.Controls.Add(this.textbox);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.gunaPanel1);
             this.Controls.Add(this.label1);
             this.Name = "Rewards";
-            this.Size = new System.Drawing.Size(679, 428);
+            this.Size = new System.Drawing.Size(1167, 428);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,5 +155,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label label2;
     }
 }

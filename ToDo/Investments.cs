@@ -17,6 +17,7 @@ namespace ToDo
         {
             InitializeComponent();
             getToDolist();
+            findToDolist();
         }
 
     int poss = 1;
@@ -27,22 +28,37 @@ namespace ToDo
         item.Top = poss;
         poss = flowLayoutPanel1.Controls.Count * item.Height + 1;
 
-        //ToDoItem[] todoItems = new ToDoItem[999];
-        //listBox1.Items.Add(textbox.Text);
-
+            //ToDoItem[] todoItems = new ToDoItem[999];
+            //listBox1.Items.Add(textbox.Text);
     }
+
+        int pos = 1;
+        public void saveItems(string text)
+        {
+            Completed item2 = new ToDo.Completed(text);
+            flowLayoutPanel2.Controls.Add(item2);
+            item2.Top = pos;
+            pos = flowLayoutPanel2.Controls.Count * item2.Height + 1;
+
+            //ToDoItem[] todoItems = new ToDoItem[999];
+            //listBox1.Items.Add(textbox.Text);
+        }
+
+
 
         private void gunaAdvenceButton1_Click(object sender, EventArgs e)
         {
             string tarName = textbox.Text;
             addItems(tarName);
             addToDolist(tarName);
+            saveItems(tarName);
+            saveToDolist(tarName);
             textbox.Text = "";
         }
 
         void getToDolist()
         {
-            SqlConnection SQL = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\canva\Documents\todolist.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection SQL = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\canva\source\repos\ToDo\ToDo\todolist.mdf;Integrated Security=True;Connect Timeout=30");
             using (SQL)
             {
                 SQL.Open();
@@ -59,7 +75,7 @@ namespace ToDo
 
         public void addToDolist(string insert)
         {
-            SqlConnection SQL = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\canva\Documents\todolist.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection SQL = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\canva\source\repos\ToDo\ToDo\todolist.mdf;Integrated Security=True;Connect Timeout=30");
             using (SQL)
             {
                 SQL.Open();
@@ -67,6 +83,35 @@ namespace ToDo
                 commandSec.ExecuteNonQuery();
             }
         }
+
+        void findToDolist()
+         {
+             SqlConnection SQL = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\canva\source\repos\ToDo\ToDo\todolist.mdf;Integrated Security=True;Connect Timeout=30");
+             using (SQL)
+             {
+                 SQL.Open();
+                 SqlCommand command3 = new SqlCommand("SELECT * FROM Complete", SQL);
+                 using (SqlDataReader reader = command3.ExecuteReader())
+                 {
+                     while (reader.Read())
+                     {
+                         saveItems("" + reader["listtext"]);
+                     }
+                 }
+             }
+         }
+
+        public void saveToDolist(string insert)
+        {
+            SqlConnection SQL = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\canva\source\repos\ToDo\ToDo\todolist.mdf;Integrated Security=True;Connect Timeout=30");
+            using (SQL)
+            {
+                SQL.Open();
+                SqlCommand commandSec = new SqlCommand("INSERT INTO Complete (Investtext) VALUES ('" + insert + "')", SQL);
+                commandSec.ExecuteNonQuery();
+            }
+        }
+
     }
 
 }

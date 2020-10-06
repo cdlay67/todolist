@@ -42,21 +42,25 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.gunaAdvenceButton10 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
             this.gunaAdvenceButton6 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.gunaAdvenceButton7 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
             this.txtSearch = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
+            this.BTN_SEARCH = new Guna.UI.WinForms.GunaCircleButton();
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.learning1 = new ToDo.Learning();
             this.projects1 = new ToDo.Projects();
             this.rewards1 = new ToDo.Rewards();
             this.reading1 = new ToDo.Reading();
-            this.investments1 = new ToDo.Investments();
             this.traveling1 = new ToDo.Traveling();
-            this.payments1 = new ToDo.Payments();
+            this.investments2 = new ToDo.Investments();
+            this.misc1 = new ToDo.Misc();
             this.gunaGradient2Panel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
@@ -93,7 +97,7 @@
             this.gunaAdvenceButton8.OnPressedColor = System.Drawing.Color.Black;
             this.gunaAdvenceButton8.Size = new System.Drawing.Size(200, 50);
             this.gunaAdvenceButton8.TabIndex = 7;
-            this.gunaAdvenceButton8.Text = "PAYMENTS";
+            this.gunaAdvenceButton8.Text = "MISC";
             this.gunaAdvenceButton8.Click += new System.EventHandler(this.gunaAdvenceButton8_Click);
             // 
             // gunaAdvenceButton9
@@ -342,7 +346,10 @@
             // 
             this.gunaElipsePanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.gunaElipsePanel1.BaseColor = System.Drawing.Color.Transparent;
+            this.gunaElipsePanel1.Controls.Add(this.gunaAdvenceButton10);
+            this.gunaElipsePanel1.Controls.Add(this.gunaPanel2);
             this.gunaElipsePanel1.Controls.Add(this.gunaAdvenceButton6);
+            this.gunaElipsePanel1.Controls.Add(this.gunaPanel1);
             this.gunaElipsePanel1.Controls.Add(this.gunaAdvenceButton7);
             this.gunaElipsePanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaElipsePanel1.Location = new System.Drawing.Point(0, 0);
@@ -350,6 +357,50 @@
             this.gunaElipsePanel1.Padding = new System.Windows.Forms.Padding(3, 1, 3, 2);
             this.gunaElipsePanel1.Size = new System.Drawing.Size(1432, 36);
             this.gunaElipsePanel1.TabIndex = 18;
+            // 
+            // gunaAdvenceButton10
+            // 
+            this.gunaAdvenceButton10.AnimationHoverSpeed = 0.07F;
+            this.gunaAdvenceButton10.AnimationSpeed = 0.03F;
+            this.gunaAdvenceButton10.BackColor = System.Drawing.Color.SpringGreen;
+            this.gunaAdvenceButton10.BaseColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton10.BorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton10.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.gunaAdvenceButton10.CheckedBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton10.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton10.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton10.CheckedImage")));
+            this.gunaAdvenceButton10.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceButton10.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceButton10.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gunaAdvenceButton10.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceButton10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceButton10.ForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton10.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton10.Image")));
+            this.gunaAdvenceButton10.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaAdvenceButton10.ImageSize = new System.Drawing.Size(15, 15);
+            this.gunaAdvenceButton10.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton10.Location = new System.Drawing.Point(1079, 1);
+            this.gunaAdvenceButton10.Name = "gunaAdvenceButton10";
+            this.gunaAdvenceButton10.OnHoverBaseColor = System.Drawing.Color.DarkGray;
+            this.gunaAdvenceButton10.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton10.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton10.OnHoverImage = null;
+            this.gunaAdvenceButton10.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton10.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton10.Size = new System.Drawing.Size(115, 33);
+            this.gunaAdvenceButton10.TabIndex = 27;
+            this.gunaAdvenceButton10.Text = "REFRESH";
+            this.gunaAdvenceButton10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaAdvenceButton10.Click += new System.EventHandler(this.gunaAdvenceButton10_Click);
+            // 
+            // gunaPanel2
+            // 
+            this.gunaPanel2.BackColor = System.Drawing.Color.DimGray;
+            this.gunaPanel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gunaPanel2.Location = new System.Drawing.Point(1194, 1);
+            this.gunaPanel2.Name = "gunaPanel2";
+            this.gunaPanel2.Size = new System.Drawing.Size(10, 33);
+            this.gunaPanel2.TabIndex = 28;
             // 
             // gunaAdvenceButton6
             // 
@@ -372,7 +423,7 @@
             this.gunaAdvenceButton6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaAdvenceButton6.ImageSize = new System.Drawing.Size(15, 15);
             this.gunaAdvenceButton6.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton6.Location = new System.Drawing.Point(1214, 1);
+            this.gunaAdvenceButton6.Location = new System.Drawing.Point(1204, 1);
             this.gunaAdvenceButton6.Name = "gunaAdvenceButton6";
             this.gunaAdvenceButton6.OnHoverBaseColor = System.Drawing.Color.DarkGray;
             this.gunaAdvenceButton6.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -385,6 +436,15 @@
             this.gunaAdvenceButton6.Text = "EXIT";
             this.gunaAdvenceButton6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaAdvenceButton6.Click += new System.EventHandler(this.gunaAdvenceButton6_Click);
+            // 
+            // gunaPanel1
+            // 
+            this.gunaPanel1.BackColor = System.Drawing.Color.DimGray;
+            this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gunaPanel1.Location = new System.Drawing.Point(1280, 1);
+            this.gunaPanel1.Name = "gunaPanel1";
+            this.gunaPanel1.Size = new System.Drawing.Size(10, 33);
+            this.gunaPanel1.TabIndex = 27;
             // 
             // gunaAdvenceButton7
             // 
@@ -444,7 +504,7 @@
             this.gunaGroupBox1.BaseColor = System.Drawing.Color.White;
             this.gunaGroupBox1.BorderColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox1.Controls.Add(this.txtSearch);
-            this.gunaGroupBox1.Controls.Add(this.gunaCircleButton1);
+            this.gunaGroupBox1.Controls.Add(this.BTN_SEARCH);
             this.gunaGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaGroupBox1.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox1.LineTop = 0;
@@ -458,6 +518,7 @@
             // txtSearch
             // 
             this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtSearch.BaseColor = System.Drawing.Color.Transparent;
             this.txtSearch.BorderColor = System.Drawing.Color.Silver;
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -472,29 +533,31 @@
             this.txtSearch.Size = new System.Drawing.Size(756, 30);
             this.txtSearch.TabIndex = 18;
             this.txtSearch.Text = "\r\n";
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // gunaCircleButton1
+            // BTN_SEARCH
             // 
-            this.gunaCircleButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaCircleButton1.AnimationSpeed = 0.03F;
-            this.gunaCircleButton1.BaseColor = System.Drawing.Color.White;
-            this.gunaCircleButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaCircleButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaCircleButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gunaCircleButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaCircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaCircleButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaCircleButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaCircleButton1.Image")));
-            this.gunaCircleButton1.ImageSize = new System.Drawing.Size(16, 16);
-            this.gunaCircleButton1.Location = new System.Drawing.Point(0, 0);
-            this.gunaCircleButton1.Name = "gunaCircleButton1";
-            this.gunaCircleButton1.OnHoverBaseColor = System.Drawing.Color.SpringGreen;
-            this.gunaCircleButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaCircleButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaCircleButton1.OnHoverImage = null;
-            this.gunaCircleButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaCircleButton1.Size = new System.Drawing.Size(47, 53);
-            this.gunaCircleButton1.TabIndex = 17;
+            this.BTN_SEARCH.AnimationHoverSpeed = 0.07F;
+            this.BTN_SEARCH.AnimationSpeed = 0.03F;
+            this.BTN_SEARCH.BaseColor = System.Drawing.Color.White;
+            this.BTN_SEARCH.BorderColor = System.Drawing.Color.Black;
+            this.BTN_SEARCH.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BTN_SEARCH.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BTN_SEARCH.FocusedColor = System.Drawing.Color.Empty;
+            this.BTN_SEARCH.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BTN_SEARCH.ForeColor = System.Drawing.Color.White;
+            this.BTN_SEARCH.Image = ((System.Drawing.Image)(resources.GetObject("BTN_SEARCH.Image")));
+            this.BTN_SEARCH.ImageSize = new System.Drawing.Size(16, 16);
+            this.BTN_SEARCH.Location = new System.Drawing.Point(0, 0);
+            this.BTN_SEARCH.Name = "BTN_SEARCH";
+            this.BTN_SEARCH.OnHoverBaseColor = System.Drawing.Color.SpringGreen;
+            this.BTN_SEARCH.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.BTN_SEARCH.OnHoverForeColor = System.Drawing.Color.White;
+            this.BTN_SEARCH.OnHoverImage = null;
+            this.BTN_SEARCH.OnPressedColor = System.Drawing.Color.Black;
+            this.BTN_SEARCH.Size = new System.Drawing.Size(47, 53);
+            this.BTN_SEARCH.TabIndex = 17;
+            this.BTN_SEARCH.Click += new System.EventHandler(this.BTN_SEARCH_Click);
             // 
             // gunaDragControl1
             // 
@@ -528,13 +591,6 @@
             this.reading1.Size = new System.Drawing.Size(1151, 428);
             this.reading1.TabIndex = 22;
             // 
-            // investments1
-            // 
-            this.investments1.Location = new System.Drawing.Point(203, 240);
-            this.investments1.Name = "investments1";
-            this.investments1.Size = new System.Drawing.Size(1151, 428);
-            this.investments1.TabIndex = 21;
-            // 
             // traveling1
             // 
             this.traveling1.Location = new System.Drawing.Point(203, 240);
@@ -542,32 +598,39 @@
             this.traveling1.Size = new System.Drawing.Size(1151, 428);
             this.traveling1.TabIndex = 20;
             // 
-            // payments1
+            // investments2
             // 
-            this.payments1.Location = new System.Drawing.Point(203, 248);
-            this.payments1.Name = "payments1";
-            this.payments1.Size = new System.Drawing.Size(1241, 420);
-            this.payments1.TabIndex = 27;
+            this.investments2.Location = new System.Drawing.Point(203, 240);
+            this.investments2.Name = "investments2";
+            this.investments2.Size = new System.Drawing.Size(1167, 428);
+            this.investments2.TabIndex = 27;
+            // 
+            // misc1
+            // 
+            this.misc1.Location = new System.Drawing.Point(203, 240);
+            this.misc1.Name = "misc1";
+            this.misc1.Size = new System.Drawing.Size(1167, 428);
+            this.misc1.TabIndex = 28;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1432, 668);
+            this.Controls.Add(this.misc1);
+            this.Controls.Add(this.gunaGradient2Panel1);
             this.Controls.Add(this.gunaShadowPanel1);
             this.Controls.Add(this.learning1);
             this.Controls.Add(this.projects1);
             this.Controls.Add(this.rewards1);
             this.Controls.Add(this.reading1);
-            this.Controls.Add(this.investments1);
             this.Controls.Add(this.traveling1);
-            this.Controls.Add(this.gunaGradient2Panel1);
             this.Controls.Add(this.gunaElipsePanel1);
-            this.Controls.Add(this.payments1);
+            this.Controls.Add(this.investments2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.gunaGradient2Panel1.ResumeLayout(false);
             this.gunaGradient2Panel1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -605,9 +668,14 @@
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel1;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox1;
         private Guna.UI.WinForms.GunaTextBox txtSearch;
-        private Guna.UI.WinForms.GunaCircleButton gunaCircleButton1;
+        private Guna.UI.WinForms.GunaCircleButton BTN_SEARCH;
         private Guna.UI.WinForms.GunaDragControl gunaDragControl1;
-        private Payments payments1;
+        private Guna.UI.WinForms.GunaPanel gunaPanel1;
+        private Guna.UI.WinForms.GunaPanel gunaPanel2;
+        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton10;
+        private System.Windows.Forms.Timer timer1;
+        private Investments investments2;
+        private Misc misc1;
     }
 }
 

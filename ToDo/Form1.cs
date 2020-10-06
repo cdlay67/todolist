@@ -40,7 +40,7 @@ namespace ToDo
 
         private void gunaAdvenceButton5_Click(object sender, EventArgs e)
         {
-            investments1.BringToFront();
+            investments2.BringToFront();
         }
 
         private void gunaAdvenceButton9_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace ToDo
 
         private void gunaAdvenceButton8_Click(object sender, EventArgs e)
         {
-            payments1.BringToFront();
+            misc1.BringToFront();
         }
 
         private void gunaAdvenceButton6_Click(object sender, EventArgs e)
@@ -64,9 +64,44 @@ namespace ToDo
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void BTN_SEARCH_Click(object sender, EventArgs e)
         {
-            
+           
         }
+
+
+        private void gunaAdvenceButton10_Click(object sender, EventArgs e)
+        {
+            rewards1.Refresh();
+            reading1.Refresh();
+            learning1.Refresh();
+            investments2.Refresh();
+            projects1.Refresh();
+            traveling1.Refresh();
+            Application.Restart();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\canva\source\repos\ToDo\ToDo\todolist.mdf;Integrated Security=True;Connect Timeout=30";
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT listext FROM Rewards, Traveling, Learning, Reading, Investments, Projects, Misc"))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        sdr.Read();
+                        learning1.Text = sdr["learning"].ToString();
+                    }
+                    con.Close();
+                }
+            }
+
+        }
+
+
     }
 }

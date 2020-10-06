@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Web;
 
 
 namespace ToDo
@@ -21,18 +20,20 @@ namespace ToDo
 
         }
 
-
         public ToDoItem(string text)
         {
             InitializeComponent();
             label1.Text = text;
-            label2.Text = DateTime.UtcNow.ToString();
-
+            var shortTimeStr = DateTime.Now.ToString("MM-dd-yyyy t");
+            //String timeStamp = GetTimestamp(DateTime.Now);
+            //string dt = DateTime.Now.ToString("yyyy-MM-dd");
+            label2.Text = shortTimeStr;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+
         {
-            SqlConnection SQL = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\canva\Documents\todolist.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection SQL = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\canva\source\repos\ToDo\ToDo\todolist.mdf;Integrated Security=True;Connect Timeout=30");
             using (SQL)
             {
                 SQL.Open();
@@ -50,11 +51,9 @@ namespace ToDo
                 command6.ExecuteNonQuery();
             }
 
-
-
             this.BackColor = Color.FromArgb(40, 177, 231);
 
-            label2.Text = "DELETED";
+            label3.Text = "DELETED";
         }
     }
 }
